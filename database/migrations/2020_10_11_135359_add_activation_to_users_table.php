@@ -13,9 +13,10 @@ class AddActivationToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('activation_token')->nullable();
-            $table->boolean('activated')->default(false);
+        Schema::create('password_resets', function (Blueprint $table) {
+            $table->string('email')->index();
+            $table->string('token')->index();
+            $table->timestamp('created_at');
         });
     }
 
@@ -26,9 +27,6 @@ class AddActivationToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('activation_token');
-            $table->dropColumn('activated');
-        });
+        Schema::dropIfExists('password_resets');
     }
 }

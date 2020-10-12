@@ -29,14 +29,6 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($user) {
-            $user->activation_token = Str::random(10);
-        });
-    }
     /**
      * The attributes that should be cast to native types.
      *
@@ -45,6 +37,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($user) {
+            $user->activation_token = Str::random(10);
+        });
+    }
+
 
     public function gravatar($size = '100')
     {
@@ -55,5 +57,5 @@ class User extends Authenticatable
     public function statuses()
     {
         return $this->hasMany(Status::class);
-    }    
+    }
 }

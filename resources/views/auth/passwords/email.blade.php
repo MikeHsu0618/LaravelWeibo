@@ -17,7 +17,7 @@
         {{ csrf_field() }}
 
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-          <label for="email" class="form-control-label">邮箱地址：</label>
+          <label for="email" class="form-control-label">郵箱地址：</label>
 
           <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
@@ -30,7 +30,7 @@
 
         <div class="form-group">
           <button type="submit" class="btn btn-primary">
-            发送密码重置邮件
+            發送密碼重製郵件
           </button>
         </div>
       </form>

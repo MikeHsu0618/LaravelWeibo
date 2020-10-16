@@ -1,11 +1,11 @@
 @extends('layouts.default')
-@section('title', '更新个人资料')
+@section('title', '更新個人資料')
 
 @section('content')
 <div class="offset-md-2 col-md-8">
   <div class="card ">
     <div class="card-header">
-      <h5>更新个人资料</h5>
+      <h5>更新個人資料</h5>
     </div>
       <div class="card-body">
 
@@ -22,22 +22,22 @@
             {{ csrf_field() }}
 
             <div class="form-group">
-              <label for="name">名称：</label>
+              <label for="name">名稱：</label>
               <input type="text" name="name" class="form-control" value="{{ $user->name }}">
             </div>
 
             <div class="form-group">
-              <label for="email">邮箱：</label>
+              <label for="email">信箱：</label>
               <input type="text" name="email" class="form-control" value="{{ $user->email }}" disabled>
             </div>
 
             <div class="form-group">
-              <label for="password">密码：</label>
+              <label for="password">密碼：</label>
               <input type="password" name="password" class="form-control" value="{{ old('password') }}">
             </div>
 
             <div class="form-group">
-              <label for="password_confirmation">确认密码：</label>
+              <label for="password_confirmation">確認密碼：</label>
               <input type="password" name="password_confirmation" class="form-control" value="{{ old('password_confirmation') }}">
             </div>
 

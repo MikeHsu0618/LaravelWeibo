@@ -47,20 +47,18 @@ class UsersController extends Controller
         ]);  
         
         $this->sendEmailConfirmationTo($user);
-        session()->flash('success', '验证邮件已发送到你的註冊邮箱上，请注意查收。');
+        session()->flash('success', '驗證信已發送到你的註冊信箱上，請注意查收。');
         return redirect('/');
     }
     protected function sendEmailConfirmationTo($user)
     {
         $view = 'emails.confirm';
         $data = compact('user');
-        $from = 'summer@example.com';
-        $name = 'Summer';
         $to = $user->email;
-        $subject = "感谢註冊 Weibo 应用！请确认你的邮箱。";
+        $subject = "感謝你註冊Laravel社群！請確認你的信箱。";
 
-        Mail::send($view, $data, function ($message) use ($from, $name, $to, $subject) {
-            $message->from($from, $name)->to($to)->subject($subject);
+        Mail::send($view, $data, function ($message) use ($to, $subject) {
+            $message->to($to)->subject($subject);
         });
     }
 
@@ -85,7 +83,7 @@ class UsersController extends Controller
         }
         $user->update($data);
 
-        session()->flash('success', '个人资料更新成功！');
+        session()->flash('success', '個人資料更新成功！');
 
         return redirect()->route('users.show', $user->id);
     }

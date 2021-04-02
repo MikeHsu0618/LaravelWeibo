@@ -4,6 +4,8 @@
 
 ### Demo:http://fierce-lake-54919.herokuapp.com/
 
+### video:https://www.youtube.com/watch?v=epCChGOQcpI&ab_channel=MikeHsu
+
 
 >用戶首頁
 >

@@ -4,6 +4,15 @@
 
 ### Demo:http://fierce-lake-54919.herokuapp.com/
 
+使用Heroku部署貌似遇到不少問題也不能輕易管理資料庫
+
+少部分人會無法正常看到頁面ＱＱ 算是學到個經驗
+
+所以錄了影片以茲觀賞 
+
+未來會把專案轉移到其他地方
+
+
 ### video:https://www.youtube.com/watch?v=epCChGOQcpI&ab_channel=MikeHsu
 
 
